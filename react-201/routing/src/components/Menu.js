@@ -1,10 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Menu() {
+  const navigate = useNavigate();
   return (
     <div>
       <ul className="menu">
+        <li onClick={() => navigate(-1)}>Back</li>
         <li>
           <Link to="/">Main</Link>
         </li>
