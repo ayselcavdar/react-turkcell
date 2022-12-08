@@ -1,12 +1,13 @@
 import "./App.css";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import Home from "./pages/Home";
-import Users from "./pages/Users";
-import Contact from "./pages/Contact";
-import UserDetail from "./pages/UserDetail";
-import DashboardLayout from "./layouts/DashboardLayout";
-import Login from "./pages/Login";
-import AuthLayout from "./layouts/AuthLayout";
+import Home from "./pages/Dashboard/Home";
+import Users from "./pages/Dashboard/Users";
+import Contact from "./pages/Dashboard/Contact";
+import UserDetail from "./pages/Dashboard/UserDetail";
+import DashboardLayout from "./layouts/Dashboard";
+import Login from "./pages/Auth/Login";
+import AuthLayout from "./layouts/Auth";
+import Register from "./pages/Auth/Register";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
           <Route path="contact" element={<Contact />} />
         </Route>
         <Route path="auth" element={<AuthLayout />}>
-          <Route path="login" element={<Login />} />
+          <Route index element={<Login />} />
+          <Route path="register" element={<Register />} />
         </Route>
       </Routes>
     </BrowserRouter>
