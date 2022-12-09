@@ -26,7 +26,7 @@ function Contact() {
     },
     validationSchema,
   });
-  console.log(touched);
+
   return (
     <div>
       <h2>Contact</h2>
