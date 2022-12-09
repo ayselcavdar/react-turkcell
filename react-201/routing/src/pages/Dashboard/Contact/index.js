@@ -20,8 +20,14 @@ function Contact() {
       message: "",
     },
     onSubmit: async (values, bag) => {
-      //await new Promise((r) => setTimeout(r, 1000));
-      console.log(values);
+      await new Promise((r) => setTimeout(r, 1000));
+
+      if (values.email === "test@test.com") {
+        return bag.setErrors({
+          email: "This email is already registered",
+        });
+      }
+
       bag.resetForm();
     },
     validationSchema,
