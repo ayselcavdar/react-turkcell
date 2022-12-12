@@ -1,7 +1,13 @@
-import React from "react";
+import { memo } from "react";
 
-function Header() {
-  return <div>Header</div>;
+function Header({ increment }) {
+  console.log("Header component re-render");
+  return (
+    <div>
+      Header
+      <button onClick={increment}>Increase</button>
+    </div>
+  );
 }
 
-export default Header;
+export default memo(Header);
